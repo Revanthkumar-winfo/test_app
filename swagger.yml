@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Test
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /read/{key}/{tag}:
+    get:
+      operationId: app_test.read
+      summary: Get values
+      parameters:
+        - name: key
+          in: path
+          type: string
+          required: True
+        - name: tag
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Success 
+
+ 
+  /write/{key}/{tag}/{value}:
+    get:
+      operationId: app_test.write
+      summary: Write into DB
+      parameters:
+        - name: key
+          in: path
+          type: string
+          required: True
+        - name: tag
+          in: path
+          type: string
+          required: True
+        - name: value
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Success
+        
+  /login:
+    get:
+      operationId: app_test.login
+      responses:
+        200:
+          description: Success
+       
+      
