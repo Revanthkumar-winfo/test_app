@@ -1,4 +1,6 @@
 from py2neo import Graph
-
-graph_3 = Graph("bolt://localhost:7687")
-print(graph_3)
+import pandas as pd
+graph = Graph("http://localhost:7474", auth=("neo4j", "Winfo_123"))
+name1="Alice"
+df=graph.run("MATCH (a:Person) RETURN a.name").to_data_frame()
+print(df)

@@ -47,9 +47,38 @@ paths:
         200:
           description: Success
         
-  /login:
+  /neo4j/{relation}/{name}:
     get:
-      operationId: app_test.login
+      operationId: app_test.neo4j_read
+      parameters:
+        - name: relation
+          in: path
+          type: string
+          required: True
+        - name: name
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Success
+  
+  /neo4j_write/{node}/{property}/{value}:
+    get:
+      operationId: app_test.neo4j_write
+      parameters:
+        - name: node
+          in: path
+          type: string
+          required: True
+        - name: property
+          in: path
+          type: string
+          required: True
+        - name: value
+          in: path
+          type: string
+          required: True
       responses:
         200:
           description: Success
